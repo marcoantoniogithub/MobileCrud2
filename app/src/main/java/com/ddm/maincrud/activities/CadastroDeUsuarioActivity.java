@@ -17,7 +17,7 @@ import retrofit2.Response;
 
 public class CadastroDeUsuarioActivity extends AppCompatActivity {
 
-    private static final String TAG = "CadastroDeUsuarioActivi";
+    private static final String TAG = "CadastroDeUsuarioActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,22 +26,22 @@ public class CadastroDeUsuarioActivity extends AppCompatActivity {
     }
 
     public void cadastrar(View view) {
-        String nome = ((EditText)findViewById(R.id.et_cadastro_usuario_nome)).getText().toString();
-        String telefone = ((EditText)findViewById(R.id.et_cadastro_usuario_phone)).getText().toString();
-        String email = ((EditText)findViewById(R.id.et_cadastro_usuario_email)).getText().toString();
-        String senha = ((EditText)findViewById(R.id.et_cadastro_usuario_password)).getText().toString();
+        String nome = ((EditText) findViewById(R.id.et_cadastro_usuario_nome)).getText().toString();
+        String email = ((EditText) findViewById(R.id.et_cadastro_usuario_email)).getText().toString();
+        String senha = ((EditText) findViewById(R.id.et_cadastro_usuario_password)).getText().toString();
+        String telefone = ((EditText) findViewById(R.id.et_cadastro_usuario_phone)).getText().toString();
 
-        DtoUser dtouser = new DtoUser(email,nome,senha,telefone);
+        DtoUser dtoUser = new DtoUser(email, nome, senha, telefone);
 
-        RetrofitService.getServico(this).cadastraUsuario(dtouser).enqueue(new Callback<DtoUser>() {
+        RetrofitService.getServico(this).cadastrarUsuario(dtoUser).enqueue(new Callback<DtoUser>() {
             @Override
             public void onResponse(Call<DtoUser> call, Response<DtoUser> response) {
-                Toast.makeText(CadastroDeUsuarioActivity.this, "Usuário cadastrado com ID: "+ response.body().getId(), Toast.LENGTH_LONG).show();
+                Toast.makeText(CadastroDeUsuarioActivity.this, "Usuário cadastrado com ID: " + response.body().getId(), Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onFailure(Call<DtoUser> call, Throwable t) {
-                Log.d(TAG, "onFailure: "+t.getMessage());
+                Log.d(TAG, "onFailure: " + t.getMessage());
             }
         });
     }

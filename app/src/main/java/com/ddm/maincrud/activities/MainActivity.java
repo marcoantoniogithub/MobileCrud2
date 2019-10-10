@@ -31,24 +31,28 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.action_alteracao_usuario:
-                startActivity(new Intent(this,AlteracaoUsuarioActivity.class));
+                startActivity(new Intent(this, AlteracaoUsuarioActivity.class));
                 return true;
             case R.id.action_cadastro_de_usuario:
-                startActivity(new Intent(this,CadastroDeUsuarioActivity.class));
+                startActivity(new Intent(this, CadastroDeUsuarioActivity.class));
                 return true;
             case R.id.action_excluir_usuario:
-                startActivity(new Intent(this,ExcluirUsuarioActivity.class));
+                startActivity(new Intent(this, ExcluirUsuarioActivity.class));
                 return true;
             case R.id.action_lista_usuarios:
-                startActivity(new Intent(this,ListaUsuariosActivity.class));
+                startActivity(new Intent(this, ListaUsuariosActivity.class));
                 return true;
             case R.id.action_login:
-                startActivity(new Intent(this,LoginActivity.class));
+                startActivity(new Intent(this, LoginActivity.class));
                 return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 }
