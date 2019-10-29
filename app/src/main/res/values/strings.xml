@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">Main Crud</string>
+    <string name="app_name">App de CRUD</string>
     <string name="action_settings">Settings</string>
-    <string name="login">Login</string>
-    <string name="senha">Senha</string>
-    <string name="email">Email</string>
+    <string name="button_undo">Desfazer</string>
 </resources>
